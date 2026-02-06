@@ -32,6 +32,12 @@ class WebBlocker:
         self.block_button = tk.Button(root, text="Block Selected Sites", command=self.block_websites)
         self.block_button.pack(side=tk.LEFT, padx=10)
 
+        self.unblock_button = tk.Button(root, text="Unblock Selected Sites", command=self.unblock_websites)
+        self.unblock_button.pack(side=tk.RIGHT, padx=10)
+
+        self.unblock_all_button = tk.Button(root, text="Unblock All", command=self.unblock_all)
+        self.unblock_all_button.pack(pady=10)
+
        
 
         
