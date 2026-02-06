@@ -25,6 +25,10 @@ class WebBlocker:
         self.add_button = tk.Button(root, text="Add to Block List", command=self.add_site)
         self.add_button.pack(pady=5)
 
+        self.listbox = tk.Listbox(root, width=50, height=10)
+        self.listbox.pack(pady=10)
+        self.update_listbox()
+
        
 
         
