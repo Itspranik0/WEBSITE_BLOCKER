@@ -4,4 +4,26 @@ import os
 import sys
 import ctypes
 
+class WebBlocker:
+    def __init__(self, root):
+        self.root = root
+        self.root.title("Web Blocker")
+        self.root.geometry("400x400")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
