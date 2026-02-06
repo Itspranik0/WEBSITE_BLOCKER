@@ -1,4 +1,4 @@
-import tkinter as tkinter
+import tkinter as tk
 from tkinter import messagebox, simpledialog
 import os
 import sys
@@ -13,7 +13,14 @@ class WebBlocker:
         self.hosts_path = r"C:\Windows\System32\drivers\etc\hosts"
         self.redirect_ip = "127.0.0.1"
         self.blocked_websites = self.load_blocked_websites()
+
+        #GUI Elements
+        self.label = tk.label(root, text="Enter website to block (e.g. www.example.com):")
+        self.label.pack(pady=10)
+
+
         
+
 
 
 
