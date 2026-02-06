@@ -29,6 +29,9 @@ class WebBlocker:
         self.listbox.pack(pady=10)
         self.update_listbox()
 
+        self.block_button = tk.Button(root, text="Block Selected Sites", command=self.block_websites)
+        self.block_button.pack(side=tk.LEFT, padx=10)
+
        
 
         
