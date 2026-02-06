@@ -10,6 +10,11 @@ class WebBlocker:
         self.root.title("Web Blocker")
         self.root.geometry("400x400")
 
+        self.hosts_path = r"C:\Windows\System32\drivers\etc\hosts"
+        self.redirect_ip = "127.0.0.1"
+        self.blocked_websites = self.load_blocked_websites()
+        
+
 
 
 
