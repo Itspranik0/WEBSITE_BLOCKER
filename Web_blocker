@@ -1,3 +1,7 @@
 import tkinter as tkinter
 from tkinter import messagebox, simpledialog
+import os
+import sys
+import ctypes
+
 
