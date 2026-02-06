@@ -20,6 +20,10 @@ class WebBlocker:
 
         self.entry = tk.Entry(root, width=50)
         self.entry.pack(pady=5)
+ 
+ 
+        self.add_button = tk.Button(root, text="Add to Block List", command=self.add_site)
+        self.add_button.pack(pady=5)
 
        
 
