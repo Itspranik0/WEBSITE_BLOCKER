@@ -18,6 +18,10 @@ class WebBlocker:
         self.label = tk.label(root, text="Enter website to block (e.g. www.example.com):")
         self.label.pack(pady=10)
 
+        self.entry = tk.Entry(root, width=50)
+        self.entry.pack(pady=5)
+
+       
 
         
 
