@@ -72,6 +72,25 @@ def add_site(self):
         site = site[7:]
     elif site.startswith("https://"):
         site = site[8:]
+
+    #REmove trailing slashes
+    site = site.rstrip('/')
+
+    sites_to_add =[]
+    if site not in self.blocked_websites:
+        sites_to_add.append(site)
+    if not site.startswith("www.") and ("www." + site) not in self.blocked_websites:
+        sites_to_add.append("www." + site)
+    elif site.startswith("www.") and site[4:] not in self.blocked_websites:
+        sites_to_add.append(site[4:])
+
+    for s in sites_to_add:
+        if s not in self.blocked_websites:
+            self.blocked_websites.append(s)
+
+    self.update_listbox()
+    self.entry.delete(0, tk.END)
+
     
 
 
