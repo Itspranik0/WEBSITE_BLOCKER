@@ -116,6 +116,29 @@ def block_websites(self):
     self.save_hosts(lines)
     self.blocked_websites = self.load_blocked_websites() # Refresh 
 
+def unblock_websites(self):
+    selected = [self.listbox.get(i) for i in self.listbox.curselection()]
+    if not selected:
+        messagebox.showwarning("Warning", "Select site to unblock.")
+        return
+    
+    try:
+        with open(self.hosts_path, 'r') as file:
+            lines = file.readlines()
+    except:
+        lines = []
+
+    new_lines = []
+    for line in lines:
+        if not any(site in line for site in selected):
+            new_lines.append(line)
+
+    self.save_hosts(new_lines)
+    for site in selected:
+        if site in self.blocked_websites:
+            self.blocked_websites.remove(site)
+    self.update_listbox() 
+
 
 
 
