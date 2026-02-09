@@ -53,6 +53,13 @@ def load_blocked_websites(self):
         messagebox.showerror("Error", "Permission denied. Run as administrator.")
     return blocked
 
+def save_hosts(self, lines):
+    try:
+        with open(self.hosts_paths, 'w') as file:
+            file.writelines(lines)
+        messagebox.showinfo("Success", "Hosts file updated successfully.")
+    except PermissionError:
+        messagebox.showerror("Error", "Permission denied. Run as administrator.")
 
 
        
