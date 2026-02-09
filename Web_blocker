@@ -61,6 +61,13 @@ def save_hosts(self, lines):
     except PermissionError:
         messagebox.showerror("Error", "Permission denied. Run as administrator.")
 
+def add_site(self):
+    site = self.entry.get().strip()
+    if not site:
+        messagebox.showwarning("Warning", "Enter a validwebsite.")
+        return
+    
+
 
        
 
