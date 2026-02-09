@@ -139,6 +139,18 @@ def unblock_websites(self):
             self.blocked_websites.remove(site)
     self.update_listbox() 
 
+def unblock_all(self):
+    try:
+        with open(self.hosts_path, 'r') as file:
+            lines = file.readlines()
+    except:
+        lines = []
+
+    new_lines = [line for line in lines if not line.strip().startswith(self.redirect_ip)]
+    self.save_hosts(new_lines)
+    self.blocked_websites.clear()
+    self.update_listbox()
+
 
 
 
