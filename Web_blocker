@@ -91,6 +91,12 @@ def add_site(self):
     self.update_listbox()
     self.entry.delete(0, tk.END)
 
+def update_listbox(self):
+    self.listbox.delete(0, tk.END)
+    for site in self.blocked_websites:
+        self.listbox.insert(tk.END, site)
+        
+
     
 
 
