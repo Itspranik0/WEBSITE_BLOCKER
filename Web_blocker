@@ -151,7 +151,11 @@ def unblock_all(self):
     self.blocked_websites.clear()
     self.update_listbox()
 
-
+def is_admin():
+    try:
+        return ctypes.windll.shell32.IsUserAnAdmin()
+    except:
+        return False
 
 
     
