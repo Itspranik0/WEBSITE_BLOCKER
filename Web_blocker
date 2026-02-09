@@ -167,6 +167,10 @@ if __name__ == "__main__":
         print("This program is only compatible with Windows.")
         sys.exit(1)
 
+    root = tk.Tk()
+    app = WebBlocker(root)
+    root.mainloop()
+
 
     
 
