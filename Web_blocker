@@ -38,6 +38,23 @@ class WebBlocker:
         self.unblock_all_button = tk.Button(root, text="Unblock All", command=self.unblock_all)
         self.unblock_all_button.pack(pady=10)
 
+def load_blocked_websites(self):
+    blocked =[]
+    try:
+        with open(self.hosts_path, 'r') as file:
+            for line in file:
+                if line.strip().startswith(self.redirect_ip):
+                    parts = line.strip().split()
+                    if len(parts) >= 2:
+                        blocked.append(parts[1])
+    except FileNotFoundError:
+        messagebox.showerror("Error", "Hosts file not found. Run as administrator.")
+    except PermissionError:
+        messagebox.showerror("Error", "Permission denied. Run as administrator.")
+    return blocked
+
+
+
        
 
         
