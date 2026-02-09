@@ -67,6 +67,12 @@ def add_site(self):
         messagebox.showwarning("Warning", "Enter a validwebsite.")
         return
     
+    #Clean the site: remove protocol
+    if site.startswith("http://"):
+        site = site[7:]
+    elif site.startswith("https://"):
+        site = site[8:]
+    
 
 
        
