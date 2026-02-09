@@ -95,7 +95,29 @@ def update_listbox(self):
     self.listbox.delete(0, tk.END)
     for site in self.blocked_websites:
         self.listbox.insert(tk.END, site)
-        
+
+def block_websites(self):
+    selected = [self.listbox.get(i) for i in self.listbox.curselection()]
+    if not selected:
+        messagebox.showwarning("Warning", "Select site to block.")
+        return
+    
+    try:
+        with open(self.hosts_path, 'r') as file:
+            lines - file.readlines()
+    except:
+        lines = []
+
+    for site in selected:
+        entry = f"{self.redirect_ip} {site}\n"
+        if entry not in lines:
+            lines.append(entry)
+    
+    self.save_hosts(lines)
+    self.blocked_websites = self.load_blocked_websites() # Refresh 
+
+
+
 
     
 
